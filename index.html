@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberIntel Events | Futuristic Event Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Mesh Gradient Background -->
+    <div class="mesh-gradient-bg"></div>
+    
+    <!-- Floating Parallax Elements -->
+    <div class="parallax-container">
+        <div class="parallax-circle parallax-1"></div>
+        <div class="parallax-circle parallax-2"></div>
+        <div class="parallax-circle parallax-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-icon neomorphic-logo">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h1 class="logo-text">CyberIntel <span class="events-badge">Events</span></h1>
+            </div>
+            
+            <nav class="main-nav">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#events" class="nav-link">Events</a>
+                <a href="#calendar" class="nav-link">Calendar</a>
+                <a href="#register" class="nav-link">Register</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="neomorphic-btn search-toggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="neomorphic-btn notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Bar (Hidden by default) -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container glass-card">
+            <div class="neomorphic-search-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="globalSearch" class="neomorphic-input" placeholder="Search events, categories, or dates...">
+                <button class="search-close" id="searchClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar glass-card">
+            <div class="sidebar-section">
+                <h3 class="section-title">
+                    <i class="fas fa-filter"></i> Filters
+                </h3>
+                
+                <div class="filter-group">
+                    <label class="filter-label">Category</label>
+                    <div class="neomorphic-select-wrapper">
+                        <select id="categoryFilter" class="neomorphic-select">
+                            <option value="all">All Categories</option>
+                            <option value="cybersecurity">Cybersecurity</option>
+                            <option value="workshop">Workshop</option>
+                            <option value="conference">Conference</option>
+                            <option value="webinar">Webinar</option>
+                            <option value="networking">Networking</option>
+                            <option value="training">Training</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Event Type</label>
+                    <div class="checkbox-group">
+                        <label class="neomorphic-checkbox">
+                            <input type="checkbox" value="online" checked>
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-label">Online</span>
+                        </label>
+                        <label class="neomorphic-checkbox">
+                            <input type="checkbox" value="offline" checked>
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-label">Offline</span>
+                        </label>
+                        <label class="neomorphic-checkbox">
+                            <input type="checkbox" value="hybrid" checked>
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-label">Hybrid</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Date Range</label>
+                    <div class="date-inputs">
+                        <input type="date" id="startDate" class="neomorphic-input date-input">
+                        <span class="date-separator">to</span>
+                        <input type="date" id="endDate" class="neomorphic-input date-input">
+                    </div>
+                </div>
+
+                <button class="neomorphic-btn apply-filters-btn">
+                    <i class="fas fa-check"></i> Apply Filters
+                </button>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="section-title">
+                    <i class="fas fa-star"></i> Quick Stats
+                </h3>
+                <div class="stats-grid">
+                    <div class="stat-card neomorphic-stat">
+                        <div class="stat-number">24</div>
+                        <div class="stat-label">Upcoming</div>
+                    </div>
+                    <div class="stat-card neomorphic-stat">
+                        <div class="stat-number">156</div>
+                        <div class="stat-label">Total Events</div>
+                    </div>
+                    <div class="stat-card neomorphic-stat">
+                        <div class="stat-number">5.2K</div>
+                        <div class="stat-label">Attendees</div>
+                    </div>
+                    <div class="stat-card neomorphic-stat">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <section class="content-area">
+            
+            <!-- Hero Section -->
+            <div class="hero-section glass-card" id="home">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-glow"></span>
+                        Welcome to the Future of Events
+                    </div>
+                    <h2 class="hero-title">Experience Next-Gen <span class="gradient-text">Cybersecurity Events</span></h2>
+                    <p class="hero-description">Join cutting-edge conferences, workshops, and training sessions that shape the future of digital security. Connect with industry leaders and expand your knowledge.</p>
+                    <div class="hero-actions">
+                        <button class="neomorphic-btn primary-btn">
+                            <i class="fas fa-rocket"></i> Explore Events
+                        </button>
+                        <button class="neomorphic-btn secondary-btn">
+                            <i class="fas fa-play-circle"></i> Watch Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-card card-1">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-users"></i>
+                        <span>Connected</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-brain"></i>
+                        <span>Innovative</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Events -->
+            <div class="section-header">
+                <h2 class="section-heading">
+                    <i class="fas fa-fire"></i> Featured Events
+                </h2>
+                <div class="view-controls">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="events-grid" id="featuredEvents">
+                <!-- Events will be dynamically loaded here -->
+            </div>
+
+            <!-- Upcoming Events Timeline -->
+            <div class="section-header" id="calendar">
+                <h2 class="section-heading">
+                    <i class="fas fa-calendar-alt"></i> Upcoming Timeline
+                </h2>
+            </div>
+
+            <div class="timeline-container glass-card">
+                <div class="timeline" id="eventsTimeline">
+                    <!-- Timeline events will be dynamically loaded -->
+                </div>
+            </div>
+
+            <!-- All Events Section -->
+            <div class="section-header" id="events">
+                <h2 class="section-heading">
+                    <i class="fas fa-list-ul"></i> All Events
+                </h2>
+                <div class="sort-controls">
+                    <select id="sortBy" class="neomorphic-select small">
+                        <option value="date">Sort by Date</option>
+                        <option value="name">Sort by Name</option>
+                        <option value="popularity">Sort by Popularity</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="events-grid" id="allEvents">
+                <!-- All events will be dynamically loaded here -->
+            </div>
+
+            <!-- Registration Section -->
+            <div class="registration-section glass-card" id="register">
+                <div class="registration-header">
+                    <h2 class="section-heading">
+                        <i class="fas fa-user-plus"></i> Event Registration
+                    </h2>
+                    <p class="registration-subtitle">Register for upcoming events and never miss an opportunity</p>
+                </div>
+
+                <form id="registrationForm" class="registration-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Full Name *</label>
+                            <input type="text" id="fullName" class="neomorphic-input" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email Address *</label>
+                            <input type="email" id="email" class="neomorphic-input" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Phone Number *</label>
+                            <input type="tel" id="phone" class="neomorphic-input" placeholder="+1 234 567 8900" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Organization</label>
+                            <input type="text" id="organization" class="neomorphic-input" placeholder="Company Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Select Event *</label>
+                        <div class="neomorphic-select-wrapper">
+                            <select id="eventSelect" class="neomorphic-select" required>
+                                <option value="">Choose an event...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Special Requirements</label>
+                        <textarea id="requirements" class="neomorphic-textarea" placeholder="Any special requirements or questions..." rows="4"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="neomorphic-btn submit-btn">
+                            <i class="fas fa-paper-plane"></i> Submit Registration
+                        </button>
+                        <button type="reset" class="neomorphic-btn reset-btn">
+                            <i class="fas fa-redo"></i> Reset Form
+                        </button>
+                    </div>
+                </form>
+
+                <div id="registrationSuccess" class="success-message" style="display: none;">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Registration Successful!</h3>
+                    <p>Thank you for registering. We'll send you a confirmation email shortly.</p>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="contact-section glass-card" id="contact">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2 class="section-heading">
+                            <i class="fas fa-envelope"></i> Get in Touch
+                        </h2>
+                        <p class="contact-description">Have questions about our events? We're here to help!</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon neomorphic-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Address</h4>
+                                    <p>CyberIntel Headquarters<br>Tech District, Innovation Hub</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon neomorphic-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Phone</h4>
+                                    <p>+91 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon neomorphic-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <p>events@cyberintel.co.in</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="#" class="social-btn neomorphic-btn">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-btn neomorphic-btn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-btn neomorphic-btn">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="social-btn neomorphic-btn">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label class="form-label">Your Name *</label>
+                                <input type="text" class="neomorphic-input" placeholder="Your Name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Your Email *</label>
+                                <input type="email" class="neomorphic-input" placeholder="your@email.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Subject *</label>
+                                <input type="text" class="neomorphic-input" placeholder="How can we help?" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Message *</label>
+                                <textarea class="neomorphic-textarea" placeholder="Your message..." rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="neomorphic-btn submit-btn full-width">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CyberIntel Events</h3>
+                <p>Shaping the future of cybersecurity through innovative events and knowledge sharing.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#register">Register</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Event Guidelines</a></li>
+                    <li><a href="#">Speaker Info</a></li>
+                    <li><a href="#">Sponsorship</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <p>Stay updated with our latest events</p>
+                <div class="newsletter-form">
+                    <input type="email" class="neomorphic-input" placeholder="Your email">
+                    <button class="neomorphic-btn">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CyberIntel. All rights reserved. | Designed with ❤️ for the future</p>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+        <div class="spinner-ring"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
